@@ -1,10 +1,18 @@
 package com.multi.gazee.customerService;
 
 public class FaqVO {
+	private int faqNo;
 	private String faqTitle;
 	private String faqContent;
 	private int faqView;
 	private String faqCategory;
+	
+	public int getFaqNo() {
+		return faqNo;
+	}
+	public void setFaqNo(int faqNo) {
+		this.faqNo = faqNo;
+	}
 	public String getFaqTitle() {
 		return faqTitle;
 	}

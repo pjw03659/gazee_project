@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="report">
+<mapper namespace="faq">
 	
-	<insert id="faq.create" parameterType="FaqVO">
-		insert into faq(title,content,category) 
-		values (#{title}, 
-				#{content}, 
-				#{category})
+	<insert id="create" parameterType="FaqVO">
+		insert into faq(faq_title,faq_content,faq_category) 
+		values (#{faqTitle}, 
+				#{faqContent}, 
+				#{faqCategory})
 	</insert>
 	
-	<delete id="faq.del"  parameterType="FaqVO">
-		delete from report where no = #{no}
+	<delete id="del"  parameterType="FaqVO">
+		delete from faq where faq_no = #{faqNo}
 	</delete>
 	
-	<update id="faq.up"  parameterType="FaqVO">
-		update report set title = #{title} where no = #{no}
+	<update id="up"  parameterType="FaqVO">
+		update faq set faq_title = #{faqTitle} where faq_no = #{faqNo}
 	</update>
 	
 	<select id="one" parameterType="Integer" resultType="FaqVO">
-		select no,title,content,mem_id,date, view from report
-		where no =#{no}
+		select faq_no, faq_title, faq_view, faq_content, faq_category from faq
+		where faq_no =#{faqNo}
 	</select>
 	
-	<select id="faq.all" resultType="FaqVO">
-		select no, title, content, mem_id, date, view from report
+	<select id="all" resultType="FaqVO">
+		select faq_no, faq_title, faq_view, faq_category from faq
 	</select>
 	
 	<select id="category" parameterType="String" resultType="FaqVO">
-		select no, title, content, mem_id, date, view from report
-		where category=#{category}
+		select faq_no, faq_title, faq_view, faq_category from faq
+		where faq_category=#{faqCategory}
 	</select>
 </mapper>
 

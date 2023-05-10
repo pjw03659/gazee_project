@@ -10,11 +10,24 @@
 <script type="text/javascript">
 $(function(){
 	$.ajax({
-		url:"faqList",
+		url:"faqlist",
 		success:function(x){
 			$('#result').append(x)
 		}
 	})
+	
+	$('#faqList').click(function(){
+			$('#result').empty()
+			$.ajax({
+				url:"faqCategory",
+				data: {
+					category1: $('#category').val()
+				},
+				success:function(x){
+					$('#result').append(x)
+				}//success
+			})//ajax
+		})//reportList
 })
 </script>
 </head>
