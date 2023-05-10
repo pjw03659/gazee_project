@@ -1,6 +1,6 @@
-package customerService;
+package com.multi.gazee.customerService;
 
-public class customerServiceVO {
+public class QnaVO {
 	private int csNo;
 	private String csTitle;
 	private String csContent;

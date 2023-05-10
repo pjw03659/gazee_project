@@ -15,7 +15,7 @@ $(function(){
 			$('#result').append(x)
 		}
 	})
-
+})
 </script>
 </head>
 <body>
