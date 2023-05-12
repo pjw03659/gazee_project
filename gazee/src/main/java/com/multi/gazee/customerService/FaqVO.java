@@ -1,6 +1,7 @@
 package com.multi.gazee.customerService;
 
 public class FaqVO {
+	private int faqId;
 	private int faqNo;
 	private String faqTitle;
 	private String faqContent;
@@ -36,6 +37,14 @@ public class FaqVO {
 	}
 	public void setFaqCategory(String faqCategory) {
 		this.faqCategory = faqCategory;
+	}
+	
+	
+	public int getFaqId() {
+		return faqId;
+	}
+	public void setFaqId(int faqId) {
+		this.faqId = faqId;
 	}
 	@Override
 	public String toString() {

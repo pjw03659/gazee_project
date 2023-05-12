@@ -15,9 +15,16 @@ public class FaqController {
 	FaqDAO dao;
 
 	@RequestMapping("customerService/faqlist")
-	public void list(Model model) {
-		List<FaqVO> list = dao.list();
+	public void list(PageVO vo, Model model) {
+		vo.setStartEnd(vo.getPage());
+		System.out.println(vo);
+		List<FaqVO> list = dao.list(vo);
+		System.out.println(list);
+		int count = dao.count();
+		int pages = count / 10 +1;		
 		model.addAttribute("list", list);
+		model.addAttribute("count", count);
+		model.addAttribute("pages", pages);
 	}
 
 	@RequestMapping("customerService/faqCategory")

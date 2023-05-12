@@ -26,11 +26,12 @@ public class FaqDAO {
 	
 	public FaqVO one(int no) {
 		FaqVO bag = my.selectOne("faq.one",no);
+		my.update("faq.viewUpdate", no);
 		return bag;
 	}
 	
-	public List<FaqVO> list(){
-		List<FaqVO> list = my.selectList("faq.all");
+	public List<FaqVO> list(PageVO vo){
+		List<FaqVO> list = my.selectList("faq.all", vo);
 		return list;
 	}
 	
@@ -38,4 +39,8 @@ public class FaqDAO {
 		List<FaqVO> category = my.selectList("faq.category", category1);
 		return category;
 	}
+	
+	public int count() {
+		return my.selectOne("faq.count");
+	}   
 }
